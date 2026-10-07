@@ -1,0 +1,22 @@
+{
+  "name": "leaf",
+  "version": "0.1.0",
+  "description": "A glTF 2.0 physically-based renderer built on WebGPU",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "gl-matrix": "^3.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.4",
+    "@webgpu/types": "^0.1.52",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.5"
+  }
+}
