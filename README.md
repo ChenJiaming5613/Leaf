@@ -64,11 +64,33 @@ docs/            # 设计笔记
 | --- | --- | --- |
 | 文件名 | `snake_case` | `gltf_loader.ts`, `pbr_material.ts` |
 | 类 / 接口 | `PascalCase` | `GltfLoader`, `PbrMaterial` |
-| 函数 / 变量 | `camelCase` | `createBindGroup()` |
+| 函数 / 方法 | `PascalCase` | `CreateBindGroup()`, `Render()` |
+| 私有成员变量 | `m_camelCase` | `m_device`, `m_vertexBuffer` |
+| 局部变量 / 参数 | `camelCase` | `vertexCount`, `clearColor` |
 | 常量 | `UPPER_SNAKE_CASE` | `MAX_LIGHT_COUNT` |
 | WGSL 文件 / 函数 | `snake_case` | `pbr.wgsl`, `fn compute_brdf()` |
 
-与 Khronos 官方保持一致（参考其 `ibl_sampler.js`、`material_info.glsl`）。
+### 格式约定
+
+- **左大括号一律换行**（Allman 风格），包括 `if` / `for` / `while` / 函数 / 类。
+- 缩进 4 空格；JSON、YAML 用 2 空格。
+- 单行语句也必须带花括号，禁止 `if (x) return;` 写法。
+- 面向用户的网页文本、代码注释一律使用英文。
+
+```ts
+// 正确
+if (!adapter)
+{
+    throw new Error('Failed to acquire a GPUAdapter.');
+}
+
+// 错误
+if (!adapter) {
+    throw new Error('...');
+}
+```
+
+规范由 `.editorconfig` 固化，主流编辑器自动生效。
 
 ## 路线图
 
